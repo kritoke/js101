@@ -1,0 +1,41 @@
+# Problem 1
+
+START 
+
+# Given a function that returns the sum of two numbers
+
+SET number1 = first value to be calculated
+SET number 2 = second value to be calculated
+
+RETURN READ number1 + READ number2
+
+END
+
+# Problem 2
+
+START
+
+# Given a function that takes an array of strings, and returns a string that is all those strings concatenated together
+
+SET stringArray = the given string of arrays
+
+RETURN stringArray with joining the individual string from the array with a " " between them
+
+END
+
+# Problem 3
+
+START
+
+# Given a function that takes an array of integers, and returns a new array with every other element
+
+SET numberArray = the given array of numbers
+SET iterator = 1
+SET newNumberArray = the new array with every other element from numberArray
+
+WHILE iterator <= length of number array
+  SET newNumberArray = add value as an array element from within the number array at space "iterator"
+  iterator = iterator + 2
+  RETURN newNumberArray
+
+END
