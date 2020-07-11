@@ -5,9 +5,15 @@
 // Print the result to the terminal.
 
 const readline = require('readline-sync');
+const MESSAGES = require('./calculator_messages.json');
+const CURR_LANGUAGE = "en";
+
+function translatedMessage(message, language="en"){
+  return MESSAGES[language][message];
+}
 
 function prompt(message) {
-  console.log(`=> ${message}`);
+  console.log(`=> ${translatedMessage(message, CURR_LANGUAGE)}`);
 }
 
 function invalidNumber(number) {
@@ -17,29 +23,29 @@ function invalidNumber(number) {
 let answer;
 
 do {
-  prompt('Welcome to Calculator!');
+  prompt("welcome");
 
-  prompt("What's the first number?");
+  prompt("firstNumber");
   let number1 = readline.question();
   
   while (invalidNumber(number1)) {
-    prompt("Hmm... that doesn't look like a valid number.");
+    prompt("errorMessage");
     number1 = readline.question();
   }
   
-  prompt("What's the second number?");
+  prompt("secondNumber");
   let number2 = readline.question();
   
   while (invalidNumber(number2)) {
-    prompt("Hmm... that doesn't look like a valid number.");
+    prompt("errorMessage");
     number2 = readline.question();
   }
   
-  prompt('What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide');
+  prompt("menuOptions");
   let operation = readline.question();
   
   while (!['1', '2', '3', '4'].includes(operation)) {
-    prompt('Must choose 1, 2, 3 or 4');
+    prompt("menuBriefOptions");
     operation = readline.question();
   }
 
@@ -58,9 +64,10 @@ do {
       output = Number(number1) / Number(number2);
       break;
   }
-  prompt(`The result is: ${output}`);
+  prompt("result");
+  console.log(output);
 
-  prompt('Would you like to perform another operation? (y/n)');
+  prompt("anotherCalculation");
   answer = readline.question();
 
   } while (answer === 'y');
