@@ -1,4 +1,4 @@
-# Last update: 09 Apr 2020
+# Last update: 05 Oct 2020
 root: true
 parser: babel-eslint
 parserOptions:
@@ -59,7 +59,7 @@ rules:
     - code: 80
       tabWidth: 2
       ignoreRegExpLiterals: false
-      ignoreStrings: false
+      ignoreStrings: true
       ignoreTemplateLiterals: true
       ignoreTrailingComments: true
       ignoreUrls: true
