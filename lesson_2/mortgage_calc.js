@@ -11,7 +11,7 @@ function prompt(message) {
 }
 
 function invalidNumber(number) {
-  return number.trimStart() === '' || Number.isNaN(Number(number));
+  return number.trimStart() === '' || Number.isNaN(Number(number)) || Number(number) < 0;
 }
 
 prompt("What is the loan amount?");
