@@ -13,16 +13,16 @@ function prompt(message) {
 prompt("What is the loan amount?");
 let loanAmount = readline.question();
 
-prompt("What is the APR of the loan?");
+prompt("What is the APR of the loan? (i.e. 10 for 10%)");
 let apr = readline.question() / 100;
 
 let monthlyInterestRate = apr / 12;
 
 prompt("What is the loan duration in months?");
-let loanDuration = readline.question();
+let monthlyDuration = readline.question();
 
 let monthlyPayment =
   (loanAmount * (monthlyInterestRate /
-    (1 - Math.pow((1 + monthlyInterestRate), (-loanDuration))))).toFixed(2);
+    (1 - Math.pow((1 + monthlyInterestRate), (-monthlyDuration))))).toFixed(2);
 
 prompt(`The monthly payment is $${monthlyPayment}`);
